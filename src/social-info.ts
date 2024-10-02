@@ -6,7 +6,7 @@ export const gitHubUrl = "https://github.com/jt-ziolo";
 export const dribbbleUrl = "https://dribbble.com/jt-ziolo";
 export const codePenUrl = "https://codepen.io/jt-ziolo-pen";
 
-export const devToUrl = "https://dev.to/jtziolo";
+export const devToUrl = "https://dev.to/jt_ziolo";
 
 type SocialBarItemData = {
   url: string;

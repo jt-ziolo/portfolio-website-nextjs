@@ -5,9 +5,5 @@ import "sst"
 export {}
 declare module "sst" {
   export interface Resource {
-    "JTZioloPortfolioWebsite": {
-      "type": "sst.aws.Nextjs"
-      "url": string
-    }
   }
 }

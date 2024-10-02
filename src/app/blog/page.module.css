@@ -1,0 +1,27 @@
+.heading {
+  margin-top: var(--size-normal);
+  text-align: center;
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
+  gap: var(--size-small);
+  margin-bottom: var(--size-largest);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.25rem;
+  border: 1px solid var(--shadow-color);
+  padding: var(--size-small);
+}
+
+.card > h3 {
+  margin-top: 0;
+}
+
+.card > button {
+  align-self: flex-end;
+}

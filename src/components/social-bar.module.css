@@ -1,0 +1,4 @@
+.iconBtnBar {
+  display: flex;
+  gap: var(--sp-1);
+}

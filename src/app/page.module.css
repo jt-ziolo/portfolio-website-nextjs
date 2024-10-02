@@ -1,0 +1,118 @@
+.sectionContainer {
+  margin-top: var(--sp-1);
+  margin-bottom: var(--sp-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-7);
+  min-height: 90vh;
+}
+
+.sectionAbout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.subsectionCerts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--sp-5);
+}
+
+.sectionProjectsContent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+}
+
+.iconBtnBar {
+  display: flex;
+  gap: var(--sp-3);
+}
+
+.projectLinkContainer {
+  display: flex;
+  gap: var(--sp-4);
+}
+
+.projectsCarousel {
+  position: relative;
+  margin: 0 auto;
+}
+
+.projectsCarouselCaption {
+  position: relative;
+  padding: var(--sp-5) var(--sp-4) var(--sp-3);
+  inset: -10rem 0 0 0;
+  height: 12rem;
+  line-height: 120%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--secondary-500);
+  /* border-left: 2px solid var(--secondary-500); */
+  /* border-right: 2px solid var(--secondary-500); */
+  /* backdrop-filter: blur(2px);
+  mask-image: linear-gradient( transparent 0%,
+    black 20%,
+    black 100%
+  ); */
+  background: linear-gradient(
+    transparent 0,
+    rgba(from var(--background-50) r g b / 0.6) 10%,
+    rgba(from var(--background-50) r g b / 0.8) 20%,
+    var(--background-50) 50%,
+    var(--background-50) 99%
+  );
+}
+
+.projectsCarouselCaption > h3 {
+  margin-top: 0;
+  /* text-shadow: var(--text-shadow-soft-even); */
+  margin-bottom: var(--sp-1);
+  color: var(--background-950);
+}
+
+.projectsCarouselCaption > p {
+  margin: 0 0 var(--sp-1) 0;
+  color: var(--background-800);
+}
+
+.projectsCarouselCaptionInner {
+  display: flex;
+  justify-content: space-between;
+  /* gap: var(--sp-1); */
+  /* padding-bottom: var(--sp-1); */
+}
+
+.projectsCarousel img {
+  box-sizing: border-box;
+  border-style: solid;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.sectionContact {
+  display: flex;
+  gap: var(--sp-6);
+  margin-top: var(--sp-7);
+}
+
+.sectionContact h2 {
+  text-align: left;
+}
+
+@media (min-width: 881px), (orientation: landscape) {
+  .projectsCarousel {
+    width: 800px;
+    height: 600px;
+  }
+
+  .projectsCarousel > div {
+    width: 800px;
+    height: 600px;
+  }
+}

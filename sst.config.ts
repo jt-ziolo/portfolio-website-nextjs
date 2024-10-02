@@ -7,7 +7,7 @@ export default $config({
         aws: {
           profile:
             input.stage === "production"
-              ? "TelomericSoftware-production"
+              ? undefined
               : "TelomericSoftware-dev",
         },
       },

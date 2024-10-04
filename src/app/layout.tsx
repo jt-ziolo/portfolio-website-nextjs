@@ -32,7 +32,7 @@ const body = Poppins({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
-  weight: "400",
+  weight: ["400", "600"],
 });
 
 const heading = Quattrocento({

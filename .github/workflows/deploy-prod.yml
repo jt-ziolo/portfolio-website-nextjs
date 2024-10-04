@@ -1,12 +1,15 @@
 name: Deploy Next.js App with SST
 
 on:
+  pull_request:
+    types: [closed]
   push:
     branches:
       - production  # Adjust this to your main branch name
 
 jobs:
   deploy:
+    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.title, '[RELEASE]')
     runs-on: ubuntu-latest
       
     permissions:

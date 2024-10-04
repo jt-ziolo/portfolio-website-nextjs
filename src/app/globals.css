@@ -157,11 +157,11 @@
   font-weight: 400;
   line-height: var(--sp-4);
   color: var(--text-700);
-
-  --nav-link-color: var(--background-950);
-  --nav-visited-color: var(--background-950);
-  --nav-hover-color: var(--primary-500);
-  --nav-active-color: var(--primary-500);
+  
+  --link-normal-color: var(--primary-600);
+  --link-active-color: var(--primary-600);
+  --link-hover-color: var(--primary-700);
+  --link-visited-color: var(--visited-color);
 
   --focus-outline-color: var(--secondary-600);
   --shadow-color: var(--secondary-50);
@@ -173,6 +173,15 @@
   --text-shadow-soft-even: 0 0 0.3rem rgba(0, 0, 0, 0.5);
 
   --rounded-border-radius: 0.25rem;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --link-normal-color: var(--primary-700);
+    --link-active-color: var(--primary-700);
+    --link-hover-color: var(--primary-900);
+    --link-visited-color: var(--visited-color);
+  }
 }
 
 body {
@@ -240,24 +249,8 @@ small {
   font-size: 0.75rem; /* 12px */
 }
 
-a.onDark:not(button > a),
-a.onDark:not(button > a):visited {
-  color: var(--nav-link-color);
-  text-decoration: none;
-}
-
-a.onDark:not(button > a):active {
-  color: var(--nav-active-color);
-}
-
 a:not(button > a) {
   text-decoration: underline;
-}
-
-a:not(button > a):visited {
-}
-
-a:not(button > a):active {
 }
 
 a:not(button > a):focus {
@@ -285,54 +278,52 @@ button.socialBtn:hover {
     padding: 0 12vw;
   }
 
-  a.onDark:not(button > a) {
-    color: var(--nav-link-color);
-    text-decoration: none;
-  }
-
-  a.onDark:not(button > a):visited {
-    color: var(--nav-visited-color);
-  }
-
-  a.onDark:not(button > a):hover {
-    color: var(--nav-hover-color);
-  }
-
-  a.onDark:not(button > a):active {
-    color: var(--nav-active-color);
-  }
-
-  a.onDark:not(button > a):focus {
-  }
-
   a:not(button > a) {
-    text-decoration: none;
-    color: var(--primary-500);
+    color: var(--link-normal-color);
+    text-decoration: underline;
   }
 
   a.external {
     display: inline-flex;
     gap: var(--sp-1);
     align-items: center;
-    text-decoration: underline dotted var(--primary-500);
-    text-decoration-thickness: 2px;
+  }
+
+  a.external:not(.nav) {
+    text-decoration: underline dotted var(--link-normal-color) 2px;
   }
 
   a.external:not(.nav):visited {
-    color: var(--visited-color);
-    text-decoration-color: var(--visited-color);
+    color: var(--link-visited-color);
+    text-decoration: underline dotted var(--link-visited-color) 2px;
+  }
+
+  a.external:not(.nav):visited:hover {
+    text-decoration: underline solid var(--link-visited-color) 1px;
+  }
+
+  a.external:not(.nav):hover {
+    text-decoration: underline solid var(--link-hover-color) 1px;
   }
 
   a:not(button > a):hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
 
-  a.nav:not(.logo, button > a):hover {
+  a.nav:not(.logo) {
+    text-decoration: none;
+  }
+
+  a.nav:not(.logo):hover {
     transform: scale(1.05);
     transform-origin: bottom;
   }
 
-  a.nav:not(.logo, button > a):hover > svg {
+  a.logo {
+    text-decoration: none;
+  }
+
+  a.nav:not(.logo):hover > svg {
     transform: none;
   }
 

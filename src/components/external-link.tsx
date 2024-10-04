@@ -5,18 +5,22 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 interface Props extends LinkProps {
   children: React.ReactNode;
+  className?: string;
+  classNameOverride?: string;
 }
 
 const ExternalLink: FC<Props> = (props) => {
   return props.href.toString().startsWith("/") ? (
     <Link {...props} />
   ) : (
-    <span className="external">
-      <Link {...props} {...externalLinkProps} />
-      <Link {...props} {...externalLinkProps}>
-        <FaExternalLinkAlt size={14} />
-      </Link>
-    </span>
+    <Link
+      {...props}
+      {...externalLinkProps}
+      className={`${props.classNameOverride ?? "external"} ${props.className ?? ""}`}
+    >
+      {props.children}
+      <FaExternalLinkAlt size={14} />
+    </Link>
   );
 };
 

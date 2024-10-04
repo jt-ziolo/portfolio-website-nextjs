@@ -81,7 +81,7 @@ export default function RootLayout({
               Contact Me
             </Link>
             <span className={styles.separator}></span>
-            <ExternalLink href={devToUrl}>Blog</ExternalLink>
+            <ExternalLink href={devToUrl} className="nav">Blog</ExternalLink>
           </div>
         </HeadroomWrapper>
         {children}

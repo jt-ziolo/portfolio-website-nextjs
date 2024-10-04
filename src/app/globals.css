@@ -310,26 +310,30 @@ button.socialBtn:hover {
     color: var(--primary-500);
   }
 
-  a.external:not(button > a) {
-    text-decoration: underline dotted;
+  a.external {
+    display: inline-flex;
+    gap: var(--sp-1);
+    align-items: center;
+    text-decoration: underline dotted var(--primary-500);
     text-decoration-thickness: 2px;
   }
 
-  a.external:not(button > a):visited {
+  a.external:not(.nav):visited {
     color: var(--visited-color);
-  }
-  
-  span.external {
-    display: inline-flex;
-    gap: var(--sp-1);
+    text-decoration-color: var(--visited-color);
   }
 
   a:not(button > a):hover {
     text-decoration: underline;
   }
 
-  a:not(.logo, button > a):hover {
+  a.nav:not(.logo, button > a):hover {
     transform: scale(1.05);
+    transform-origin: bottom;
+  }
+
+  a.nav:not(.logo, button > a):hover > svg {
+    transform: none;
   }
 
   a:not(button > a):focus {

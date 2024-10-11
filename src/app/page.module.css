@@ -21,6 +21,19 @@
   gap: var(--sp-5);
 }
 
+.subsectionIntro {
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--sp-5);
+  align-items: top;
+}
+
+.subsectionIntro img {
+  border-radius: 50%;
+}
+
 .sectionProjectsContent {
   display: flex;
   flex-wrap: wrap;

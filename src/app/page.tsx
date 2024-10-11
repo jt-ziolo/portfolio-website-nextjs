@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import placeholderImg from "@/public/next.svg";
 import cert1Img from "@/public/aws-cert-2.png";
 import cert2Img from "@/public/aws-cert-1.svg";
+import photoImg from "@/public/photo.jpeg";
 import CarouselWrapper from "@/components/carousel-wrapper";
 import { FaDribbble, FaFigma, FaGithub } from "react-icons/fa";
 import { projectsData } from "@/project-info";
@@ -115,7 +116,18 @@ export default function Home() {
       <div className={`${styles.sectionContainer} sideMargins`}>
         <section className={styles.sectionAbout}>
           <article id="content">
-            <AboutMe />
+            <h2>About Me</h2>
+            <div className={styles.subsectionIntro}>
+              <div>
+                <AboutMe />
+              </div>
+              <Image
+                src={photoImg}
+                width={250}
+                height={250}
+                alt="Picture of JT Ziolo."
+              />
+            </div>
           </article>
           <article>
             <AboutMeFrontend />

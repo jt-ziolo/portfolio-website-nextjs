@@ -134,6 +134,8 @@
 }
 
 :root {
+  scroll-behavior: smooth;
+
   --fs-root: 16px;
 
   --sp-base: var(--fs-root);
@@ -157,7 +159,7 @@
   font-weight: 400;
   line-height: var(--sp-4);
   color: var(--text-700);
-  
+
   --link-normal-color: var(--primary-600);
   --link-active-color: var(--primary-600);
   --link-hover-color: var(--primary-700);

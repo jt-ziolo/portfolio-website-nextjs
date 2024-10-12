@@ -20,6 +20,7 @@ import { useMediaQuery } from "react-responsive";
 import { devToUrl } from "@/social-info";
 import { externalLinkProps } from "@/external-link-props";
 import ExternalLink from "@/components/external-link";
+import ScrollProvider from "@/components/scroll-provider";
 
 const title = Arvo({
   subsets: ["latin"],
@@ -65,40 +66,44 @@ export default function RootLayout({
       <body
         className={`${title.variable} ${body.variable} ${heading.variable}`}
       >
-        <SkipLink href="#content" />
-        <HeadroomWrapper className={styles.navBar}>
-          <Link className="logo" href="/#about">
-            <h1>J.T. Ziolo</h1>
-          </Link>
-          <div className={styles.navBarRight}>
-            <Link className="nav" href="/#about">
-              About Me
+        <ScrollProvider>
+          <SkipLink href="#content" />
+          <HeadroomWrapper className={styles.navBar}>
+            <Link className="logo" href="/#about" scroll={false}>
+              <h1>J.T. Ziolo</h1>
             </Link>
-            <Link className="nav" href="/#projects">
-              Projects
-            </Link>
-            <Link className="nav" href="/#contact">
-              Contact Me
-            </Link>
-            <span className={styles.separator}></span>
-            <ExternalLink href={devToUrl} className="nav">Blog</ExternalLink>
-          </div>
-        </HeadroomWrapper>
-        {children}
-        <footer className={styles.footer}>
-          <div>
-            <small>©2024 Telomeric Software LLC (DBA JT Ziolo)</small>
-            <div className={styles.footerLinks}>
-              <Link className="nav" href="./policies/#privacy">
-                <small>Privacy Policy</small>
+            <div className={styles.navBarRight}>
+              <Link className="nav" href="/#about" scroll={false}>
+                About Me
               </Link>
-              <Link className="nav" href="./policies/#cookie">
-                <small>Cookie Policy</small>
+              <Link className="nav" href="/#projects" scroll={false}>
+                Projects
               </Link>
+              <Link className="nav" href="/#contact" scroll={false}>
+                Contact Me
+              </Link>
+              <span className={styles.separator}></span>
+              <ExternalLink href={devToUrl} className="nav">
+                Blog
+              </ExternalLink>
             </div>
-          </div>
-          {socialBarDark}
-        </footer>
+          </HeadroomWrapper>
+          {children}
+          <footer className={styles.footer}>
+            <div>
+              <small>©2024 Telomeric Software LLC (DBA JT Ziolo)</small>
+              <div className={styles.footerLinks}>
+                <Link className="nav" href="./policies/#privacy" scroll={false}>
+                  <small>Privacy Policy</small>
+                </Link>
+                <Link className="nav" href="./policies/#cookie" scroll={false}>
+                  <small>Cookie Policy</small>
+                </Link>
+              </div>
+            </div>
+            {socialBarDark}
+          </footer>
+        </ScrollProvider>
       </body>
     </html>
   );

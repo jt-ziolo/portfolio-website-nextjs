@@ -54,8 +54,8 @@ dependencies:
     specifier: ^10.0.0
     version: 10.0.0(react@18.3.1)
   sst:
-    specifier: 3.1.51
-    version: 3.1.51
+    specifier: 3.2.11
+    version: 3.2.11
 
 devDependencies:
   '@types/node':
@@ -5906,48 +5906,48 @@ packages:
     resolution: {integrity: sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==}
     dev: false
 
-  /sst-darwin-arm64@3.1.51:
-    resolution: {integrity: sha512-XPWrBAXUW1JrXQ0B5BkmaUpWCh1LhaWzdtraJycw/ETnNl3BMFgC34qzP576n/P1mdQvWuB5uJSkq4vxpEPoPQ==}
+  /sst-darwin-arm64@3.2.11:
+    resolution: {integrity: sha512-Je5rDfDbfU0xc2g+Wt9ausBZdx0NAodfrgga+mJKvW8WEYRWU1YKHwTzECjTi2k+gSJdge6q8CWrWqOqQGaSwA==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: false
     optional: true
 
-  /sst-darwin-x64@3.1.51:
-    resolution: {integrity: sha512-Is+ljAg85pJclAlbXtv7z+2B+gqes/DhOsv8DO5bLtcqtTESc9bKbhMb5wrs7y4LdoYFlkCeF/I2JXwxL/rjgw==}
+  /sst-darwin-x64@3.2.11:
+    resolution: {integrity: sha512-80T/OwxmM7bXmYS3ibYKhRCwCgjarAeDnl0dYi/Wlt2ofuYbCCS+9JLIXf/ZzKmRP/5YlmnptECTBwzrFnNYdw==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: false
     optional: true
 
-  /sst-linux-arm64@3.1.51:
-    resolution: {integrity: sha512-YEeRV3QN57QpY/AR3fJq9K0ygpmpjwCUqtHjy6hzZDvnUlBvRYX7AuNG0DVdbeay9W24+cuLt1QzskB2DwVO/g==}
+  /sst-linux-arm64@3.2.11:
+    resolution: {integrity: sha512-7gVWDZXtCKKynq9rw1UiYEOQDVyy7qfnQYCGowxfDwL60pi2SNMb8KE1aOd+jHYRJNpZjAjC8inSoL46gdfrhg==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: false
     optional: true
 
-  /sst-linux-x64@3.1.51:
-    resolution: {integrity: sha512-eP4ndcE4474yXNJr1Tm8J3I33MyDKTjTE1KXIYO+ZwcvIrwZOJYXUCLe3KIJk6/Fxh1v4wiocVh23ENKIG1B1Q==}
+  /sst-linux-x64@3.2.11:
+    resolution: {integrity: sha512-W62WiTmKnvGIS3709oQvHaRvq8pUC7Ta2Uf04Rr67idN0+Edyw8X96Yb7jnjnBt7Rt6i5+sqjjoKj1bkvAEVwA==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: false
     optional: true
 
-  /sst-linux-x86@3.1.51:
-    resolution: {integrity: sha512-1KHOUYrWrF5b89AWD0vHZ/t3jszQlXZpN6JMQbACjXS9Cjz6SIyGkVBd/fXnwZrxy4Jx2/CHcXiLtx/uSxcBXg==}
+  /sst-linux-x86@3.2.11:
+    resolution: {integrity: sha512-iDnvWBoWbj+NxY0TW95T1/szKC5kFN7mSZ/OsVrhlkgCyhl4RwO3FaK5r1OXbC/qpvSMhV9Hm0+Xi+yu8jtoBA==}
     cpu: [x86]
     os: [linux]
     requiresBuild: true
     dev: false
     optional: true
 
-  /sst@3.1.51:
-    resolution: {integrity: sha512-7+oykEsvfwyXyPRfvp/djsuqpvzNUhzPCxaNlL+ilk0RB06yhW0BmMb+5y4XKt//+zs5dzgXhL2KSvBT+RKcdA==}
+  /sst@3.2.11:
+    resolution: {integrity: sha512-nG4Vu5JmOjZg0je6ek76TBmJ02oAlMM2lHEm8qdBYd7+ccvuvKadWtxWQz2/gTtqE40SpSmaH/fqEQRPUH+ELg==}
     hasBin: true
     peerDependencies:
       hono: 4.x
@@ -5962,11 +5962,11 @@ packages:
       jose: 5.2.3
       openid-client: 5.6.4
     optionalDependencies:
-      sst-darwin-arm64: 3.1.51
-      sst-darwin-x64: 3.1.51
-      sst-linux-arm64: 3.1.51
-      sst-linux-x64: 3.1.51
-      sst-linux-x86: 3.1.51
+      sst-darwin-arm64: 3.2.11
+      sst-darwin-x64: 3.2.11
+      sst-linux-arm64: 3.2.11
+      sst-linux-x64: 3.2.11
+      sst-linux-x86: 3.2.11
     dev: false
 
   /stop-iteration-iterator@1.0.0:

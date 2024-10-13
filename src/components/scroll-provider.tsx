@@ -1,13 +1,12 @@
 "use client";
 
 import { useScrollToHash } from "@/lib/useScrollToHash";
-import { FC } from "react";
 
-interface Props {
+interface ComponentProps {
   children: React.ReactNode;
 }
 
-const ScrollProvider: FC<Props> = ({ children }) => {
+const ScrollProvider = ({ children }: ComponentProps) => {
   useScrollToHash();
   return <>{children}</>;
 };

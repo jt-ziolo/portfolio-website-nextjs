@@ -1,7 +1,7 @@
-import { ComponentPropsWithoutRef } from "react";
-import Image from "next/image";
-import sudokuImg from "@/public/project-sudoku.png";
 import illustrationImg from "@/public/illustration.png";
+import sudokuImg from "@/public/project-sudoku.png";
+import Image from "next/image";
+import { ComponentPropsWithoutRef } from "react";
 
 type ProjectData = {
   title: string;

@@ -1,10 +1,15 @@
 import Link from "next/link";
 
-const SkipLink = (props: { href: string; text?: string }) => {
+interface ComponentProps {
+  href: string;
+  text?: string;
+}
+
+const SkipLink = ({ href, text }: ComponentProps) => {
   return (
     <Link
-      href={props.href}
-      aria-label={props.text ?? "Skip to main content"}
+      href={href}
+      aria-label={text ?? "Skip to main content"}
       style={{
         position: "absolute",
         left: "-10000px",
@@ -14,7 +19,7 @@ const SkipLink = (props: { href: string; text?: string }) => {
         overflow: "hidden",
       }}
     >
-      {props.text ?? "Skip to main content"}
+      {text ?? "Skip to main content"}
     </Link>
   );
 };

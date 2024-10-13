@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import logoImg from "@/public/logo.png";
-import Image from "next/image";
-import styles from "./layout.module.css";
+
+import ExternalLink from "@/components/external-link";
 import HeadroomWrapper from "@/components/headroom-wrapper";
+import ScrollProvider from "@/components/scroll-provider";
+import SkipLink from "@/components/skip-link";
+import { socialBarDark } from "@/lib/social-bar";
+import logoImg from "@/public/logo.png";
+import { siteConfig } from "@/site-config";
+import { devToUrl } from "@/social-info";
 import {
   Arvo,
   Open_Sans,
@@ -10,17 +15,12 @@ import {
   Quattrocento,
   Roboto_Condensed,
 } from "next/font/google";
+import Link from "next/link";
+// import { useMediaQuery } from "react-responsive";
+
+import styles from "./layout.module.css";
 import "./normalize.css";
 import "./globals.css";
-import { siteConfig } from "@/site-config";
-import Link from "next/link";
-import { socialBarDark } from "@/components/social-bar";
-import SkipLink from "@/components/skip-link";
-import { useMediaQuery } from "react-responsive";
-import { devToUrl } from "@/social-info";
-import { externalLinkProps } from "@/external-link-props";
-import ExternalLink from "@/components/external-link";
-import ScrollProvider from "@/components/scroll-provider";
 
 const title = Arvo({
   subsets: ["latin"],
@@ -57,7 +57,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // TODO
   // const isMobile = useMediaQuery({
   //   query: "(max-width: 880px) and (orientation: portrait)",
   // });

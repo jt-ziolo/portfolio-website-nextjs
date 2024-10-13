@@ -1,22 +1,23 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import placeholderImg from "@/public/next.svg";
-import cert1Img from "@/public/aws-cert-2.png";
-import cert2Img from "@/public/aws-cert-1.svg";
-import photoImg from "@/public/photo.jpeg";
 import CarouselWrapper from "@/components/carousel-wrapper";
-import { FaDribbble, FaFigma, FaGithub } from "react-icons/fa";
-import { projectsData } from "@/project-info";
-import { ComponentPropsWithoutRef } from "react";
-import { markInDarkContainer, socialBtnFactory } from "@/components/social-bar";
+import ContactForm from "@/components/contact-form";
+import ExternalLink from "@/components/external-link";
 import { externalLinkProps } from "@/external-link-props";
+import { markInDarkContainer, socialBtnFactory } from "@/lib/social-bar";
 import AboutMe from "@/markdown/about-me.mdx";
 import AboutMeCloud from "@/markdown/about-me-cloud-section.mdx";
 import AboutMeFrontend from "@/markdown/about-me-frontend-section.mdx";
-import ProjectsDescription from "@/markdown/projects.mdx";
 import CTA from "@/markdown/cta.mdx";
-import ExternalLink from "@/components/external-link";
-import ContactForm from "@/components/contact-form";
+import ProjectsDescription from "@/markdown/projects.mdx";
+import { projectsData } from "@/project-info";
+import cert2Img from "@/public/aws-cert-1.svg";
+import cert1Img from "@/public/aws-cert-2.png";
+import placeholderImg from "@/public/next.svg";
+import photoImg from "@/public/photo.jpeg";
+import Image from "next/image";
+import { ComponentPropsWithoutRef } from "react";
+import { FaDribbble, FaFigma, FaGithub } from "react-icons/fa";
+
+import styles from "./page.module.css";
 
 export default function Home() {
   // Project section

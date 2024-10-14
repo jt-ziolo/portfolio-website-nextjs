@@ -1,3 +1,27 @@
 {
-  "extends": ["next", "next/core-web-vitals"]
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:xss/recommended",
+    "plugin:security/recommended-legacy",
+    "plugin:no-unsanitized/recommended-legacy",
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+    "prettier",
+    "xss",
+    "perfectionist"
+  ],
+  "rules": {
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "prettier/prettier": "error",
+    "perfectionist/sort-imports": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc"
+      }
+    ]
+  }
 }

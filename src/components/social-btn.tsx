@@ -2,30 +2,35 @@
 
 import { externalLinkProps } from "@/external-link-props";
 import Link from "next/link";
-import { FC, useId } from "react";
+import { useId } from "react";
 import { IconType } from "react-icons";
 import { FaQuestion } from "react-icons/fa";
 
-type Props = {
+type ComponentProps = {
   href: string;
   linkAccessibleText: string;
   iconProps?: React.ComponentPropsWithoutRef<"span">;
   iconType?: IconType;
 };
 
-const SocialBtn: FC<Props> = (props) => {
-  const IconComponent = props.iconType ?? FaQuestion;
+const SocialBtn = ({
+  href,
+  linkAccessibleText,
+  iconProps,
+  iconType,
+}: ComponentProps) => {
+  const IconComponent = iconType ?? FaQuestion;
   const id = useId();
 
   return (
     <Link
       id={id}
-      href={props.href}
-      aria-label={props.linkAccessibleText}
+      href={href}
+      aria-label={linkAccessibleText}
       {...externalLinkProps}
     >
       <button aria-labelledby={id} className="socialBtn">
-        <span {...props.iconProps}>
+        <span {...iconProps}>
           <IconComponent />
         </span>
       </button>

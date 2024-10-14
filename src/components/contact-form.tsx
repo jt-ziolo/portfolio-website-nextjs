@@ -1,7 +1,7 @@
 "use client";
 
-import * as React from "react";
 import * as Form from "@radix-ui/react-form";
+
 import styles from "./contact-form.module.css";
 
 function handleSubmit(event: React.FormEvent<HTMLFormElement>): void {

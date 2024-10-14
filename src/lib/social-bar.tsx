@@ -1,6 +1,7 @@
-import { IconType } from "react-icons";
-import SocialBtn from "./social-btn";
 import { socialBarData } from "@/social-info";
+import { IconType } from "react-icons";
+
+import SocialBtn from "../components/social-btn";
 import styles from "./social-bar.module.css";
 
 // Social buttons

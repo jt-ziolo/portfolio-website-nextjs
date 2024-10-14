@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import logoImg from "@/public/logo.png";
-import Image from "next/image";
-import styles from "./layout.module.css";
+
+import ExternalLink from "@/components/external-link";
 import HeadroomWrapper from "@/components/headroom-wrapper";
+import ScrollProvider from "@/components/scroll-provider";
+import SkipLink from "@/components/skip-link";
+import { socialBarDark } from "@/lib/social-bar";
+import logoImg from "@/public/logo.png";
+import { siteConfig } from "@/site-config";
 import {
   Arvo,
   Open_Sans,
@@ -10,16 +14,11 @@ import {
   Quattrocento,
   Roboto_Condensed,
 } from "next/font/google";
+import Link from "next/link";
+
+import styles from "./layout.module.css";
 import "./normalize.css";
 import "./globals.css";
-import { siteConfig } from "@/site-config";
-import Link from "next/link";
-import { socialBarDark } from "@/components/social-bar";
-import SkipLink from "@/components/skip-link";
-import { useMediaQuery } from "react-responsive";
-import { devToUrl } from "@/social-info";
-import { externalLinkProps } from "@/external-link-props";
-import ExternalLink from "@/components/external-link";
 
 const title = Arvo({
   subsets: ["latin"],
@@ -56,49 +55,30 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // TODO
-  // const isMobile = useMediaQuery({
-  //   query: "(max-width: 880px) and (orientation: portrait)",
-  // });
   return (
     <html lang="en">
       <body
         className={`${title.variable} ${body.variable} ${heading.variable}`}
       >
-        <SkipLink href="#content" />
-        <HeadroomWrapper className={styles.navBar}>
-          <Link className="logo" href="/#about">
-            <h1>J.T. Ziolo</h1>
-          </Link>
-          <div className={styles.navBarRight}>
-            <Link className="nav" href="/#about">
-              About Me
-            </Link>
-            <Link className="nav" href="/#projects">
-              Projects
-            </Link>
-            <Link className="nav" href="/#contact">
-              Contact Me
-            </Link>
-            <span className={styles.separator}></span>
-            <ExternalLink href={devToUrl} className="nav">Blog</ExternalLink>
-          </div>
-        </HeadroomWrapper>
-        {children}
-        <footer className={styles.footer}>
-          <div>
-            <small>©2024 Telomeric Software LLC (DBA JT Ziolo)</small>
-            <div className={styles.footerLinks}>
-              <Link className="nav" href="./policies/#privacy">
-                <small>Privacy Policy</small>
-              </Link>
-              <Link className="nav" href="./policies/#cookie">
-                <small>Cookie Policy</small>
-              </Link>
+        <ScrollProvider>
+          <SkipLink href="#content" />
+          <HeadroomWrapper />
+          {children}
+          <footer className={styles.footer}>
+            <div>
+              <small>©2024 Telomeric Software LLC (DBA JT Ziolo)</small>
+              <div className={styles.footerLinks}>
+                <Link className="nav" href="./policies/#privacy" scroll={false}>
+                  <small>Privacy Policy</small>
+                </Link>
+                <Link className="nav" href="./policies/#cookie" scroll={false}>
+                  <small>Cookie Policy</small>
+                </Link>
+              </div>
             </div>
-          </div>
-          {socialBarDark}
-        </footer>
+            {socialBarDark}
+          </footer>
+        </ScrollProvider>
       </body>
     </html>
   );

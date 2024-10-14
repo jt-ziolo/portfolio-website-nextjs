@@ -134,6 +134,8 @@
 }
 
 :root {
+  scroll-behavior: smooth;
+
   --fs-root: 16px;
 
   --sp-base: var(--fs-root);
@@ -157,7 +159,7 @@
   font-weight: 400;
   line-height: var(--sp-4);
   color: var(--text-700);
-  
+
   --link-normal-color: var(--primary-600);
   --link-active-color: var(--primary-600);
   --link-hover-color: var(--primary-700);
@@ -272,7 +274,7 @@ button.socialBtn:hover {
   border: 2px solid var(--accent-500);
 }
 
-@media (min-width: 1001px), (orientation: landscape) {
+@media (min-width: 1100px), (orientation: landscape) {
   .sideMargins {
     /* side padding: 12vw full and 5vw mobile */
     padding: 0 12vw;

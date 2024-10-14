@@ -1,4 +1,3 @@
-
 type SiteConfig = {
   topLevelDomain: string;
   titleTemplate: string;

@@ -1,4 +1,3 @@
-import { Button } from "@radix-ui/themes";
 import styles from "./page.module.css";
 
 export default function Blog() {
@@ -11,9 +10,9 @@ export default function Blog() {
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus
           vero facere officiis temporibus quae...
         </p>
-        <Button variant="outline" size="4">
-          Read more
-        </Button>
+        {/* <Button variant="outline" size="4"> */}
+        {/* Read more */}
+        {/* </Button> */}
       </article>
     );
   };

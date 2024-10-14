@@ -3,18 +3,6 @@
   display: none;
 }
 
-.navBar button {
-  visibility: visible;
-  display: inline-block;
-}
-
-.navBar.navBarMobile > * > ul[data-visible="false"],
-.navBar.navBarDesktop button,
-.navBar.navBarMobile .separator {
-  visibility: hidden;
-  display: none;
-}
-
 .navBar h1 {
   color: var(--primary-950);
   font-size: 2.369rem;
@@ -47,39 +35,6 @@
   justify-content: space-between;
 }
 
-.navBar.navBarMobile > * {
-  display: grid;
-  grid-template-areas:
-    "a . b"
-    "c c c";
-  align-items: center;
-  justify-content: space-between;
-}
-
-.navBar.navBarMobile > * > a {
-  grid-area: a;
-}
-
-.navBar.navBarMobile > * > button {
-  background-color: transparent;
-  border-radius: 100%;
-  border: 2px solid var(--primary-800);
-  color: var(--primary-800);
-  font-size: 1.25rem;
-  grid-area: b;
-  line-height: 0;
-  padding: 0.45rem;
-}
-
-.navBar.navBarMobile > * > ul[data-visible="true"] {
-  grid-area: c;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-width: 100%;
-}
-
 .navBar .separator::after {
   content: "";
   position: absolute;
@@ -87,4 +42,57 @@
   transform: translateY(-50%);
   height: 40%;
   border-right: 1px solid var(--primary-900);
+}
+
+@media screen and (min-width: 1100px) and (orientation: landscape) {
+  .navBar button {
+    visibility: hidden;
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1099px), (orientation: portrait) {
+  .navBar button {
+    visibility: visible;
+    display: inline-block;
+  }
+
+  .navBar > * > ul[data-visible="false"],
+  .navBar .separator {
+    visibility: hidden;
+    display: none;
+  }
+
+  .navBar > * {
+    display: grid;
+    grid-template-areas:
+      "a . b"
+      "c c c";
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navBar > * > a {
+    grid-area: a;
+  }
+
+  .navBar > * > button {
+    background-color: transparent;
+    border-radius: 100%;
+    border: 2px solid var(--primary-800);
+    color: var(--primary-800);
+    font-size: 1.25rem;
+    grid-area: b;
+    line-height: 0;
+    padding: 0.45rem;
+  }
+
+  .navBar > * > ul[data-visible="true"] {
+    grid-area: c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+  }
 }

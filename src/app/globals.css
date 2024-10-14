@@ -313,6 +313,7 @@ button.socialBtn:hover {
   }
 
   a.nav:not(.logo) {
+    display: inline-block;
     text-decoration: none;
   }
 

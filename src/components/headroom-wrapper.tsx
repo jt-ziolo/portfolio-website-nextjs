@@ -1,6 +1,10 @@
 "use client";
 
-import { isDesktopQuery } from "@/lib/responsive-breakpoints";
+import MediaQuery from "@/lib/media-query";
+import {
+  isDesktopQuery,
+  isMobileOrTabletQuery,
+} from "@/lib/responsive-breakpoints";
 import { devToUrl } from "@/social-info";
 import Link from "next/link";
 import { useState } from "react";
@@ -17,16 +21,9 @@ type ComponentProps = Omit<ReactHeadroomProps, "children"> & {
 };
 
 const HeadroomWrapper = ({ children, ...headroomProps }: ComponentProps) => {
-  const isDesktop = useMediaQuery({ query: isDesktopQuery });
-  const isMobile = !isDesktop;
-
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   function handleMenuButtonClick(event: any): void {
-    if (isDesktop) {
-      setIsMenuVisible((_) => false);
-      return;
-    }
     setIsMenuVisible((_) => !isMenuVisible);
   }
 
@@ -34,18 +31,20 @@ const HeadroomWrapper = ({ children, ...headroomProps }: ComponentProps) => {
     setIsMenuVisible((_) => false);
   }
 
-  const navBarClassName = `${styles.navBar} ${isMobile ? styles.navBarMobile : styles.navBarDesktop}`;
+  const navBarClassName = `${styles.navBar}`;
 
   return (
     <Headroom {...headroomProps} className={navBarClassName}>
       <Link className="logo" href="/#about" scroll={false}>
         <h1>J.T. Ziolo</h1>
       </Link>
-      <button onClick={handleMenuButtonClick}>
-        <span>
-          <FaBars />
-        </span>
-      </button>
+      <MediaQuery query={isMobileOrTabletQuery}>
+        <button onClick={handleMenuButtonClick}>
+          <span>
+            <FaBars />
+          </span>
+        </button>
+      </MediaQuery>
       <ul data-visible={isMenuVisible}>
         <li>
           <Link

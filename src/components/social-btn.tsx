@@ -2,7 +2,7 @@
 
 import { externalLinkProps } from "@/external-link-props";
 import Link from "next/link";
-import { FC, useId } from "react";
+import { useId } from "react";
 import { IconType } from "react-icons";
 import { FaQuestion } from "react-icons/fa";
 

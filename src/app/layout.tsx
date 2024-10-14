@@ -7,7 +7,6 @@ import SkipLink from "@/components/skip-link";
 import { socialBarDark } from "@/lib/social-bar";
 import logoImg from "@/public/logo.png";
 import { siteConfig } from "@/site-config";
-import { devToUrl } from "@/social-info";
 import {
   Arvo,
   Open_Sans,
@@ -16,7 +15,6 @@ import {
   Roboto_Condensed,
 } from "next/font/google";
 import Link from "next/link";
-// import { useMediaQuery } from "react-responsive";
 
 import styles from "./layout.module.css";
 import "./normalize.css";
@@ -57,9 +55,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // const isMobile = useMediaQuery({
-  //   query: "(max-width: 880px) and (orientation: portrait)",
-  // });
   return (
     <html lang="en">
       <body
@@ -67,26 +62,7 @@ export default function RootLayout({
       >
         <ScrollProvider>
           <SkipLink href="#content" />
-          <HeadroomWrapper className={styles.navBar}>
-            <Link className="logo" href="/#about" scroll={false}>
-              <h1>J.T. Ziolo</h1>
-            </Link>
-            <div className={styles.navBarRight}>
-              <Link className="nav" href="/#about" scroll={false}>
-                About Me
-              </Link>
-              <Link className="nav" href="/#projects" scroll={false}>
-                Projects
-              </Link>
-              <Link className="nav" href="/#contact" scroll={false}>
-                Contact Me
-              </Link>
-              <span className={styles.separator}></span>
-              <ExternalLink href={devToUrl} className="nav">
-                Blog
-              </ExternalLink>
-            </div>
-          </HeadroomWrapper>
+          <HeadroomWrapper />
           {children}
           <footer className={styles.footer}>
             <div>

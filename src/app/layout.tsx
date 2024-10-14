@@ -15,6 +15,7 @@ import {
   Roboto_Condensed,
 } from "next/font/google";
 import Link from "next/link";
+import { Suspense } from "react";
 
 import styles from "./layout.module.css";
 import "./normalize.css";
@@ -60,25 +61,35 @@ export default function RootLayout({
       <body
         className={`${title.variable} ${body.variable} ${heading.variable}`}
       >
-        <ScrollProvider>
-          <SkipLink href="#content" />
-          <HeadroomWrapper />
-          {children}
-          <footer className={styles.footer}>
-            <div>
-              <small>©2024 Telomeric Software LLC (DBA JT Ziolo)</small>
-              <div className={styles.footerLinks}>
-                <Link className="nav" href="./policies/#privacy" scroll={false}>
-                  <small>Privacy Policy</small>
-                </Link>
-                <Link className="nav" href="./policies/#cookie" scroll={false}>
-                  <small>Cookie Policy</small>
-                </Link>
+        <Suspense>
+          <ScrollProvider>
+            <SkipLink href="#content" />
+            <HeadroomWrapper />
+            {children}
+            <footer className={styles.footer}>
+              <div>
+                <small>©2024 Telomeric Software LLC (DBA JT Ziolo)</small>
+                <div className={styles.footerLinks}>
+                  <Link
+                    className="nav"
+                    href="./policies/#privacy"
+                    scroll={false}
+                  >
+                    <small>Privacy Policy</small>
+                  </Link>
+                  <Link
+                    className="nav"
+                    href="./policies/#cookie"
+                    scroll={false}
+                  >
+                    <small>Cookie Policy</small>
+                  </Link>
+                </div>
               </div>
-            </div>
-            {socialBarDark}
-          </footer>
-        </ScrollProvider>
+              {socialBarDark}
+            </footer>
+          </ScrollProvider>
+        </Suspense>
       </body>
     </html>
   );

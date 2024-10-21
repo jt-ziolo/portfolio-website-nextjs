@@ -1,9 +1,7 @@
 /// <reference path="./.sst/platform/config.d.ts" />
-
 // See below for price class options
 // https://docs.aws.amazon.com/pt_br/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html
 const cdnDistPriceClass = "PriceClass_100";
-
 export default $config({
   app(input) {
     return {
@@ -13,6 +11,7 @@ export default $config({
           profile:
             input.stage === "production" ? undefined : "TelomericSoftware-dev",
         },
+        cloudflare: "5.41.0",
       },
       home: "aws",
     };
@@ -22,8 +21,10 @@ export default $config({
       domain: {
         name: "ziolojt.com",
         aliases: ["www.ziolojt.com"],
-        dns: false,
-        cert: process.env.CERT_ARN,
+        dns: sst.cloudflare.dns({
+          // override: true,
+        }),
+        // cert: process.env.CERT_ARN,
       },
       transform: {
         cdn: (args) => {

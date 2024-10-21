@@ -1,4 +1,9 @@
 /// <reference path="./.sst/platform/config.d.ts" />
+
+// See below for price class options
+// https://docs.aws.amazon.com/pt_br/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html
+const cdnDistPriceClass = "PriceClass_100";
+
 export default $config({
   app(input) {
     return {
@@ -6,9 +11,7 @@ export default $config({
       providers: {
         aws: {
           profile:
-            input.stage === "production"
-              ? undefined
-              : "TelomericSoftware-dev",
+            input.stage === "production" ? undefined : "TelomericSoftware-dev",
         },
       },
       home: "aws",
@@ -18,14 +21,24 @@ export default $config({
     new sst.aws.Nextjs("JTZioloPortfolioWebsite", {
       domain: {
         name: "ziolojt.com",
+        aliases: ["www.ziolojt.com"],
         dns: false,
         cert: process.env.CERT_ARN,
       },
+      transform: {
+        cdn: (args) => {
+          args.transform = {
+            distribution: (distArgs) => {
+              distArgs.priceClass = cdnDistPriceClass;
+            },
+          };
+        },
+      },
     });
     // new sst.aws.Email("EmailForm", {
-    //   sender: "forms.ziolojt.com",
+    //   sender: "ziolojt.com",
     //   dmarc: "v=DMARC1; p=none; adkim=s; aspf=s;",
-    //   dns: sst.cloudflare.dns(),
+    //   dns: false,
     // });
   },
 });

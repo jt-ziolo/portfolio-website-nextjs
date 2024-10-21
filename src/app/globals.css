@@ -289,22 +289,19 @@ button.socialBtn:hover {
     display: inline-flex;
     gap: var(--sp-1);
     align-items: center;
-  }
-
-  a.external:not(.nav) {
     text-decoration: underline dotted var(--link-normal-color) 2px;
   }
 
-  a.external:not(.nav):visited {
+  a.external:visited {
     color: var(--link-visited-color);
     text-decoration: underline dotted var(--link-visited-color) 2px;
   }
 
-  a.external:not(.nav):visited:hover {
+  a.external:visited:hover {
     text-decoration: underline solid var(--link-visited-color) 1px;
   }
 
-  a.external:not(.nav):hover {
+  a.external:hover {
     text-decoration: underline solid var(--link-hover-color) 1px;
   }
 
@@ -312,12 +309,12 @@ button.socialBtn:hover {
     text-decoration: none;
   }
 
-  a.nav:not(.logo) {
+  a.nav:not(.logo, .external) {
     display: inline-block;
     text-decoration: none;
   }
 
-  a.nav:not(.logo):hover {
+  a.nav:not(.logo, .external):hover {
     transform: scale(1.05);
     transform-origin: bottom;
   }

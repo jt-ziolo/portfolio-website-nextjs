@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "deploy-prod": "sst deploy --stage production",
-    "dev": "sst bind next dev",
+    "sst-dev": "sst dev",
+    "dev": "next dev",
     "lint": "next lint",
     "sso": "aws sso login --sso-session=TelomericSoftware"
   },

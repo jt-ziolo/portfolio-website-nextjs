@@ -9,7 +9,6 @@
     "deploy-prod": "sst deploy --stage production",
     "dev": "sst bind next dev",
     "lint": "next lint",
-    "start": "next start",
     "sso": "aws sso login --sso-session=TelomericSoftware"
   },
   "dependencies": {

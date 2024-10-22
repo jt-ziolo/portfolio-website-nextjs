@@ -6,9 +6,11 @@ export default $config({
   app(input) {
     return {
       name: "ziolojt-portfolio-website",
+      removal: "remove", // wipe
       providers: {
         aws: {
           profile:
+            // Resolves to TelomericSoftware-production
             input.stage === "production" ? undefined : "TelomericSoftware-dev",
         },
         cloudflare: "5.41.0",
@@ -22,9 +24,8 @@ export default $config({
         name: "ziolojt.com",
         aliases: ["www.ziolojt.com"],
         dns: sst.cloudflare.dns({
-          // override: true,
+          override: true,
         }),
-        // cert: process.env.CERT_ARN,
       },
       transform: {
         cdn: (args) => {

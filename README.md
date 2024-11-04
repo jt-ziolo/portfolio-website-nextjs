@@ -2,7 +2,7 @@
 
 This is the source code for my portfolio website. It was designed using [Figma](https://www.figma.com), built using [React/Next.js](https://nextjs.org/), and deployed using [SST/Ion](https://sst.dev/).
 
-This project is not intended for public distribution.
+This project is a work in progress.
 
 ## Info/Credits
 
